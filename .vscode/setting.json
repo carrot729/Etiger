@@ -1,0 +1,9 @@
+{
+    "editor.quickSuggestions": false,
+    "editor.formatOnSave": false,
+    "editor.formatOnPaste": false,
+    "cph.general.defaultLanguage": "cpp",
+    "cph.general.defaultLanguageTemplateFileLocation": "D:\\template.cpp", 
+    "cph.language.cpp.SubmissionCompiler": "GNU G++14 6.4.0",
+    "cph.language.cpp.Args": "-std=c++14 -O2"
+}
