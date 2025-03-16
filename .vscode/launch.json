@@ -1,25 +1,24 @@
 {
-  "name": "(gdb) Launch",
-  "type": "cppdbg",
-  "request": "launch",
-  "program": "${fileDirname}/${fileBasenameNoExtension}.exe",
-  "args": [],
-  "stopAtEntry": false,
-  "cwd": "${fileDirname}",
-  "environment": [],
-  "externalConsole": false,
-  "MIMode": "gdb",
-  "miDebuggerPath": "C:\\w64devkit\\bin\\gdb.exe",
-  "setupCommands": [
+    "configurations": [
       {
-          "description": "Enable pretty-printing for gdb",
-          "text": "-enable-pretty-printing",
-          "ignoreFailures": true
-      },
-      {
-          "description": "Set Disassembly Flavor to Intel",
-          "text": "-gdb-set disassembly-flavor intel",
-          "ignoreFailures": true
+        "MIMode": "gdb",
+        "args": [],
+        "cwd": "${fileDirname}",
+        "env": {
+          "PATH": "C:\\w64devkit\\bin;${env:PATH}"
+        },
+        "environment": [],
+        "externalConsole": true,
+        "internalConsosleOptions": "neverOpen",
+        "miDebuggerPath": "C:\\w64devkit\\bin\\gdb.exe",
+        "name": "single file debug",
+        "preLaunchTask": "ascii check",
+        "program": "${env:TEMP}\\test.exe",
+        "request": "launch",
+        "stopAtEntry": false,
+        "type": "cppdbg",
+        
       }
-  ]
-}
+    ],
+    "version": "0.2.0"
+  }

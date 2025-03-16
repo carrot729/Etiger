@@ -6,51 +6,51 @@ using namespace std;
 typedef long long ll;
 typedef string str;
 
-const ll N=1e5+9;
+const ll N = 1e2+9;
 void input();void solve();
 bool match1();void solve1();
 bool match2();void solve2();
 bool match3();void solve3();
-struct stone
-{
-    ll t, d;
-};
 ll n;
-stone SL[N];
-bool cmp(const stone& a, const stone& b) {
-    return a.t * b.d < b.t * a.d;
-}
+vector<ll> a(N);
 void input() {
-//  freopen("sandal.in","r",stdin);
-//  freopen("sandal.out","w",stdout);
+//  freopen("cards.in","r",stdin);
+//  freopen("cards.out","w",stdout);
     cin >> n;
-    for (ll i = 1; i <= n; i++) {
-        cin >> SL[i].t >> SL[i].d;
-    }
-    sort(SL + 1, SL + 1 + n, cmp);
+    for (ll i = 1; i <= n; i++)
+        cin >> a[i];
 }
-vector<ll> sT(N);
 void solve() {
     ll ans = 0;
+    ll ave, tmp = 0;
     for (ll i = 1; i <= n; i++) {
-        sT[i] = sT[i - 1] + SL[i].t;
-    }
-    for (ll i = 1; i <= n; i++) {
-        ans += SL[i].d * sT[i - 1] * 2;
+        tmp += a[i];
+    } ave = tmp / n;
+    for (ll i = 1; i < n; i++) {
+        if (a[i] != ave) {
+            a[i + 1] -= ave - a[i];
+            ans++;
+        }
     }
     cout << ans << endl;
 }
 bool match1() {
-    return 0;
+    ll tmp = 0;
+    for (ll i = 1; i <= n; i++)
+        tmp += a[i];
+    return tmp % n;
 }
 void solve1() {
-    solve();
+    cout << -1 << endl;
 }
 bool match2() {
-    return 0;
+    for (ll i = 2; i <= n; i++)
+        if (a[i] != a[1])
+            return 0;
+    return 1;
 }
 void solve2() {
-    solve();
+    cout << 0 << endl;
 }
 bool match3() {
     return 0;

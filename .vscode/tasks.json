@@ -10,7 +10,7 @@
         "-g",
         "${file}",
         "-o",
-        "${fileDirname}\\${fileBasenameNoExtension}.exe",
+        "${env:TEMP}\\test.exe",
         "-std=c++11",
         "-Wall",
         "-O2"
