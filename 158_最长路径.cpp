@@ -12,8 +12,8 @@ bool match1();void solve1();
 bool match2();void solve2();
 bool match3();void solve3();
 ll n, m;
-typedef pair<ll, ll> P;
-vector<P> g[N];
+typedef pair<ll, ll> Pll;
+vector<Pll> g[N];
 void input() {
 //  freopen("longest.in","r",stdin);
 //  freopen("longest.out","w",stdout);
@@ -21,7 +21,7 @@ void input() {
     for (ll i = 0; i < m; i++) {
         ll u, v, cost;
         cin >> u >> v >> cost;
-        P tmp; tmp.first = v; tmp.second = cost;
+        Pll tmp; tmp.first = v; tmp.second = cost;
         g[u].push_back(tmp);
     }
 }
