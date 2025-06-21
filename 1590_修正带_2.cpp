@@ -11,13 +11,13 @@ inline void write(ll x){if(x<0)putchar('-'),x=-x;if(x>9)write(x/10);putchar(x%10
 void input();void solve();bool match1();void solve1();bool match2();void solve2();bool match3();void solve3();
 
 const ll N = 1e3+9;
-ll n;
+ll n, m;
 map<ll, ll> d;
 void input() {
-//  freopen(".in","r",stdin);
-//  freopen(".out","w",stdout);
-    scanf("%lld", &n);
-    for (ll i = 0; i < n; i++) {
+//  freopen("tape.in","r",stdin);
+//  freopen("tape.out","w",stdout);
+    scanf("%lld %lld", &n, &m);
+    for (ll i = 0; i < m; i++) {
         ll si, ti;
         scanf("%lld %lld", &si, &ti);
         d[si] += 1;
